@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@api/*": ["src/handles/api/*"],
+      "@store/*": ["src/store/*"],
+      "@column/*": ["src/handles/column/*"],
+      "@validate/*": ["src/handles/validate/*"],
+    }
+  },
+  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*"]
+}
