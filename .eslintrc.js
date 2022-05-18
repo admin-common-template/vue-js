@@ -8,7 +8,7 @@ module.exports = {
     'plugin:vue/essential',
     'airbnb-base',
     'vue-global-api',
-    './.eslintrc-auto-import.json',
+    'eslint:recommended',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -37,6 +37,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
     'linebreak-style': ['error', 'unix'], // 换行符规则
+    indent: ['error', 2], // 缩进4个空格
     'max-len': 'off', // 行的最大长度
     'no-param-reassign': ['error', { props: false }], // 禁止对函数参数再赋值
     'no-return-assign': ['error', 'except-parens'], // return时：除非用圆括号括起来，否则不允许赋值
@@ -45,5 +46,8 @@ module.exports = {
     semi: [2, 'never'], // 结尾分号
     'vue/multi-word-component-names': 'off', // 组件名命名规则校验
     'vue/no-multiple-template-root': 'off',
+  },
+  globals: {
+    ElMessage: 'readonly',
   },
 }

@@ -1,18 +1,18 @@
 <script setup>
-import { useAppStore } from "@store/app";
+import { useAppStore } from '@store/app'
 
-const appStore = useAppStore();
+const appStore = useAppStore()
 
 const commons = reactive({
-  msg: "Hello World",
-});
+  msg: 'Hello World',
+})
 
 function showMsg() {
-  ElMessage.success("message");
+  ElMessage.success('message')
 }
 
 function changeStore(value) {
-  appStore.count += value;
+  appStore.count += value
 }
 </script>
 

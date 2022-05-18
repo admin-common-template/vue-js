@@ -10,15 +10,15 @@ import WindiCSS from 'vite-plugin-windicss'
 export default defineConfig({
   server: {
     host: '0.0.0.0',
-    port: 3000
+    port: 3000,
   },
   build: {
-    outDir: 'front'
+    outDir: 'front',
   },
   plugins: [
     vue(),
     legacy({
-      targets: ['defaults', 'IE 11'] // 兼容IE11
+      targets: ['defaults', 'IE 11'], // 兼容IE11
     }),
     AutoImport({
       include: [
