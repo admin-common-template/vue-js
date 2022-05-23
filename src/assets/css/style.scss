@@ -1,0 +1,21 @@
+// 隐藏滚动条，默认y
+@mixin hideScroll($xy: y) {
+    overflow: hidden;
+    overflow-#{$xy}: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// 设置iconify大小
+.iconify {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+// 宽度100%
+._w_full {
+    width: 100% !important;
+}

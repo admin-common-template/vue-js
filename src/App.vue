@@ -1,7 +1,13 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <HelloWorld />
+  <router-view />
 </template>
+
+<style>
+#app {
+  display: flex;
+  height: 100vh;
+}
+</style>
