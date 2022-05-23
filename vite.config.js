@@ -5,6 +5,7 @@ import legacy from '@vitejs/plugin-legacy'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { viteMockServe } from 'vite-plugin-mock'
 import WindiCSS from 'vite-plugin-windicss'
 
 export default defineConfig({
@@ -17,6 +18,9 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    viteMockServe({
+      supportTs: false,
+    }),
     legacy({
       targets: ['defaults', 'IE 11'], // 兼容IE11
     }),
