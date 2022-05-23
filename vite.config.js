@@ -32,6 +32,11 @@ export default defineConfig({
       ],
       resolvers: [ElementPlusResolver()],
       imports: ['vue', 'vue-router'],
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true,
+      },
     }),
     Components({
       resolvers: [ElementPlusResolver()],
