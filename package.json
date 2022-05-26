@@ -32,7 +32,6 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-vue": "^9.0.0",
     "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
     "unplugin-auto-import": "^0.7.1",
     "unplugin-vue-components": "^0.19.5",
     "vite": "^2.9.9",
