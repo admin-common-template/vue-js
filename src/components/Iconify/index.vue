@@ -3,5 +3,5 @@ import { Icon } from '@iconify/vue'
 </script>
 
 <template>
-  <Icon class="cursor-pointer iconify" v-bind="$attrs" />
+  <Icon class="text-[20px]" v-bind="$attrs" />
 </template>
