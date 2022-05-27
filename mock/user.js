@@ -1,3 +1,5 @@
+import menuList from './data/menus'
+
 // 用户登录
 const login = {
   url: '/api/index/UserLogin',
@@ -21,6 +23,20 @@ const login = {
   },
 }
 
+const GetMenu = {
+  url: '/api/index/GetMenu',
+  method: 'get',
+  response: () => ({
+    code: 0,
+    data: {
+      data: menuList,
+      button: [],
+    },
+    msg: '',
+  }),
+}
+
 export default [
   login,
+  GetMenu,
 ]

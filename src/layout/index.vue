@@ -1,8 +1,18 @@
 <script setup name="Base">
+import { useUserStore } from '@store/user'
 import { layout } from '@/common/config'
 import Aside from './Aside.vue'
 import Header from './Header.vue'
 import Tags from './Tags.vue'
+
+const userStore = useUserStore()
+
+const isRouterAlive = ref(true)
+const cacheList = ref([])
+
+onBeforeMount(() => {
+  userStore.getUserMenu()
+})
 </script>
 
 <template>
