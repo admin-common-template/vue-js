@@ -4,6 +4,7 @@ import { createPinia } from 'pinia'
 import piniaPersist from 'pinia-plugin-persist'
 import App from './App.vue'
 import router from './router'
+import 'element-plus/theme-chalk/el-message.css'
 // eslint-disable-next-line import/no-unresolved
 import 'virtual:windi.css'
 import './assets/css/cover.scss'
