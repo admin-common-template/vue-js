@@ -7,10 +7,11 @@ import router from '@/router/index.js'
 export const useUserStore = defineStore({
   id: 'user',
   state: () => ({
-    userInfo: {},
-    menuList: [],
-    buttonList: [],
-    routesName: {},
+    userInfo: {}, // 用户信息
+    menuList: [], // 菜单权限列表
+    buttonList: [], // 按钮权限列表
+    routesName: {}, // 菜单对应标题
+    baseName: '', // 基础路由name（首页）
   }),
   actions: {
     async setUserInfo(info) {
@@ -33,6 +34,19 @@ export const useUserStore = defineStore({
         removeList.map((item) => router.removeRoute(item))
         this.menuList = menus
         this.buttonList = button
+        const getChildName = (menuList) => {
+          if (menuList.children) {
+            return getChildName(menuList.children[0])
+          }
+          return menuList.name
+        }
+        const getBaseName = () => {
+          const name = getChildName(menus?.[0] || {})
+          if (name) {
+            return childInfo[name] ? name : 'notFund'
+          }
+        }
+        this.baseName = getBaseName()
       }
       return Promise.resolve()
     },

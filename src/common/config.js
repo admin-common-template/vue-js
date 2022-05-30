@@ -8,8 +8,8 @@ export const layout = {
 
 // 一级导航图标（iconify.js）
 export const menuIcons = {
-  demo: 'bx:bxs-home', // 组件
-  function: 'heroicons-outline:academic-cap', // 功能
+  dashboard: 'bx:bxs-home', // 组件
+  demo: 'heroicons-outline:academic-cap', // 功能
 }
 
 // 加密公私钥
@@ -28,4 +28,8 @@ export const regs = {
     rule: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`~!@#$%^&*()\-_+<>?:"{},.;'[\]]).{8,16}$/,
     remark: '8-16位包含字母大小写、数字、特殊字符',
   },
+}
+
+export default {
+  title: '模板后台系统', // 后台系统标题
 }
