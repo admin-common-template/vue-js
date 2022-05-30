@@ -23,6 +23,18 @@ const login = {
   },
 }
 
+// 用户登出
+const userLogout = {
+  url: '/api/index/userLogout',
+  method: 'post',
+  response: () => ({
+    code: 0,
+    data: null,
+    msg: '登出成功',
+  }),
+}
+
+// 获取用户菜单按钮权限
 const GetMenu = {
   url: '/api/index/GetMenu',
   method: 'get',
@@ -38,5 +50,6 @@ const GetMenu = {
 
 export default [
   login,
+  userLogout,
   GetMenu,
 ]
