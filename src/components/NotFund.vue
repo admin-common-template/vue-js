@@ -1,6 +1,8 @@
 <template>
-    <div>notFund</div>
+    <h2>notFund</h2>
+    <el-button link @click="router.replace('/')">返回首页</el-button>
 </template>
 
 <script setup name="notFund">
+const router = useRouter()
 </script>

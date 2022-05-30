@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { useUserStore } from '@store/user'
 import childrens from './children'
 
 const router = createRouter({
@@ -7,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'App',
+      name: 'Layout',
       component: () => import('@/layout/index.vue'),
       redirect: { name: 'refresh' },
       children: [
@@ -38,11 +37,11 @@ const router = createRouter({
 
 // 路由跳转拦截
 router.beforeEach((to, from, next) => {
-  const userStore = useUserStore()
+  const userInfo = JSON.parse(sessionStorage.getItem('user') || '{}')?.userInfo || {}
   // 如果用户未登录且前往页面不是登录页则直接跳转登录页
   if (to.name === 'Login') {
     next()
-  } else if (!userStore.userInfo.nick_name) {
+  } else if (!userInfo.nick_name) {
     next({ name: 'Login' })
   } else {
     next()

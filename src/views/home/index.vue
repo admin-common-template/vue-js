@@ -3,5 +3,5 @@
 </script>
 
 <template>
-  <div>首页</div>
+  <div>home</div>
 </template>
