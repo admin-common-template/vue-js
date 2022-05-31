@@ -11,7 +11,7 @@ import Users from './components/Users.vue'
             <Collapse />
             <Refresh />
         </div>
-        <div>
+        <div class="flex items-center">
             <ScreenFull />
             <Users />
         </div>
