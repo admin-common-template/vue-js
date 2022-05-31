@@ -1,0 +1,14 @@
+/* ======================= 菜单相关 ======================= */
+.el-menu {
+  // 导航菜单设置文本与图表的距离
+  .el-sub-menu__title span {
+    margin-left: 10px;
+  }
+  // 激活菜单背景
+  .el-menu-item.is-active {
+    background-color: #2d8cf0;
+  }
+  .el-sub-menu .el-menu-item {
+      min-width: auto;
+  }
+}

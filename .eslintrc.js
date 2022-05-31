@@ -8,7 +8,7 @@ module.exports = {
     'plugin:vue/essential',
     'airbnb-base',
     'vue-global-api',
-    'eslint:recommended',
+    './.eslintrc-auto-import.json',
   ],
   parserOptions: {
     ecmaVersion: 'latest',

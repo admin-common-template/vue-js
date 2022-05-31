@@ -1,0 +1,10 @@
+// 隐藏滚动条，默认y
+@mixin hideScroll($xy: y) {
+    overflow: hidden;
+    overflow-#{$xy}: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
