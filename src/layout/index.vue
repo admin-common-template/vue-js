@@ -1,14 +1,18 @@
 <script setup name="Base">
 import { useUserStore } from '@store/user'
 import { layout } from '@/common/config'
+import { useAppStore } from '@store/app'
 import Aside from './Aside.vue'
 import Header from './Header.vue'
 import Tags from './Tags.vue'
 
+const appStore = useAppStore()
 const userStore = useUserStore()
 
 const isRouterAlive = ref(true)
 const cacheList = ref([])
+
+const isCollapse = computed(() => appStore.isCollapse)
 
 onBeforeMount(() => {
   userStore.getUserMenu()
@@ -17,7 +21,7 @@ onBeforeMount(() => {
 
 <template>
   <el-container>
-    <el-aside :width="layout.collapseOff">
+    <el-aside :width="isCollapse ? layout.collapseOn: layout.collapseOff">
       <Aside />
     </el-aside>
     <el-container>
