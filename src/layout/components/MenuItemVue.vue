@@ -1,3 +1,9 @@
+<script setup name="MenuItemVue">
+defineProps({
+  menuList: Array,
+})
+</script>
+
 <template>
   <template v-for="item of menuList">
     <!-- 判断有无子组件，有的为submenu，且需要继续调用本组件 -->
@@ -16,12 +22,3 @@
     </el-menu-item>
   </template>
 </template>
-
-<script setup name="MenuItemVue">
-defineProps({
-  menuList: Array,
-})
-</script>
-
-<style lang="scss" scoped>
-</style>

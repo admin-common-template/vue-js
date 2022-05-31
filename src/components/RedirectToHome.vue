@@ -1,7 +1,3 @@
-<template>
-    <div class="w-full h-full" v-loading="true"></div>
-</template>
-
 <script setup>
 import { useUserStore } from '@store/user'
 
@@ -26,3 +22,7 @@ onMounted(() => {
   toBaseRoute()
 })
 </script>
+
+<template>
+    <div class="w-full h-full" v-loading="true"></div>
+</template>
