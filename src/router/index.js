@@ -8,12 +8,12 @@ const router = createRouter({
       path: '/',
       name: 'Layout',
       component: () => import('@/layout/index.vue'),
-      redirect: { name: 'refresh' },
+      redirect: { name: 'RedirectToHome' },
       children: [
         {
           path: '/',
-          name: 'refresh',
-          component: () => import('@/components/Refresh.vue'),
+          name: 'RedirectToHome',
+          component: () => import('@/components/RedirectToHome.vue'),
         },
         ...childrens,
         {
