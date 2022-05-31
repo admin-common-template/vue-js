@@ -10,5 +10,32 @@
   }
   .el-sub-menu .el-menu-item {
       min-width: auto;
+    }
   }
+  
+/* ======================= 表格相关 ======================= */
+
+// 分页
+#app {
+  .el-pagination {
+    padding-top: 8px;
+    .el-pagination__total, .el-pagination__sizes {
+      margin-right: 8px;
+    }
+    li {
+      margin: 0 2px;
+    }
+    .el-select {
+      .el-input {
+        width: 100px;
+      }
+    }
+  }
+}
+
+/* ======================= 其余 ======================= */
+
+// card
+.el-card {
+  --el-card-padding: 8px !important;
 }
