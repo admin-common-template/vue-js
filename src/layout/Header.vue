@@ -1,6 +1,7 @@
 <script setup name="Header">
 import Collapse from './components/Collapse.vue'
 import Refresh from './components/Refresh.vue'
+import ScreenFull from './components/ScreenFull.vue'
 import Users from './components/Users.vue'
 </script>
 
@@ -11,6 +12,7 @@ import Users from './components/Users.vue'
             <Refresh />
         </div>
         <div>
+            <ScreenFull />
             <Users />
         </div>
     </div>
