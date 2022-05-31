@@ -1,4 +1,4 @@
-<script setup name="Base">
+<script setup name="layout">
 import { useUserStore } from '@store/user'
 import { layout } from '@/common/config'
 import { useAppStore } from '@store/app'
