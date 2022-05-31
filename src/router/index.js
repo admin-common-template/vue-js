@@ -6,13 +6,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'Layout',
+      name: 'layout',
       component: () => import('@/layout/index.vue'),
-      redirect: { name: 'RedirectToHome' },
+      redirect: { name: 'redirectToHome' },
       children: [
         {
           path: '/',
-          name: 'RedirectToHome',
+          name: 'redirectToHome',
           component: () => import('@/components/RedirectToHome.vue'),
         },
         ...childrens,
@@ -25,7 +25,7 @@ const router = createRouter({
     },
     {
       path: '/login',
-      name: 'Login',
+      name: 'login',
       component: () => import('@/views/login/index.vue'),
     },
     {
@@ -39,10 +39,10 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const userInfo = JSON.parse(sessionStorage.getItem('user') || '{}')?.userInfo || {}
   // 如果用户未登录且前往页面不是登录页则直接跳转登录页
-  if (to.name === 'Login') {
+  if (to.name === 'login') {
     next()
   } else if (!userInfo.nick_name) {
-    next({ name: 'Login' })
+    next({ name: 'login' })
   } else {
     next()
   }

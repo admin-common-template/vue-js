@@ -16,7 +16,7 @@ function logout() {
       buttonList: [],
       routesName: {},
     })
-    router.push({ name: 'Login' })
+    router.push({ name: 'login' })
   })
 }
 </script>
