@@ -1,7 +1,7 @@
 /* ======================= 菜单相关 ======================= */
 .el-menu {
   // 导航菜单设置文本与图表的距离
-  .el-sub-menu__title span {
+  &:not(.el-menu--collapse) .el-sub-menu__title span {
     margin-left: 10px;
   }
   // 激活菜单背景
