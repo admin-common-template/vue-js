@@ -12,6 +12,15 @@ const userStore = useUserStore()
 const isRouterAlive = ref(true)
 const cacheList = ref([])
 
+// 局部组件刷新
+const reload = () => {
+  isRouterAlive.value = false
+  nextTick(() => {
+    isRouterAlive.value = true
+  })
+}
+provide('reload', reload)
+
 const isCollapse = computed(() => appStore.isCollapse)
 
 onBeforeMount(() => {

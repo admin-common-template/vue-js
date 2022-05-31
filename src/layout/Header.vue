@@ -1,5 +1,6 @@
 <script setup name="Header">
 import Collapse from './components/Collapse.vue'
+import Refresh from './components/Refresh.vue'
 import Users from './components/Users.vue'
 </script>
 
@@ -7,6 +8,7 @@ import Users from './components/Users.vue'
     <div class="flex items-center justify-between h-[50px] px-4">
         <div>
             <Collapse />
+            <Refresh />
         </div>
         <div>
             <Users />
