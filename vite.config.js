@@ -7,6 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe } from 'vite-plugin-mock'
 import WindiCSS from 'vite-plugin-windicss'
+import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig({
   server: {
@@ -14,7 +15,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
-    outDir: 'front',
+    outDir: 'dist',
   },
   plugins: [
     vue(),
@@ -42,6 +43,11 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
     WindiCSS(),
+    viteCompression({
+      threshold: 5120, // 大于5k文件压缩
+      ext: '.gz',
+      deleteOriginFile: true,
+    }),
   ],
   resolve: {
     alias: {
