@@ -15,7 +15,7 @@ export const menuIcons = {
 /*
  * @description 分页可选条数配置
  */
-export const pageSizeOpts = [10, 20, 30, 50, 100, 200, 500]
+export const pageSizeOpts = [20, 50, 100, 500, 1000]
 
 // 加密公私钥
 export const cryptKey = {
@@ -33,6 +33,25 @@ export const regs = {
     rule: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`~!@#$%^&*()\-_+<>?:"{},.;'[\]]).{8,16}$/,
     remark: '8-16位包含字母大小写、数字、特殊字符',
   },
+}
+
+/*
+ * @description 公共dom高度
+ */
+export const domHeight = {
+  pageHeight: window.innerHeight - 90 - 20 - 2, // 页面可视高度：可用窗口高度 - 顶部区域90 - 内容padding20 - 边框2
+  pagination: 42, // 分页区域高度
+  cardPadding: 16, // 卡片内边距高度
+}
+
+const cellPadding = 8 // 表格单元格左右内边距和，同步cover.scss样式表设置的值
+// 表格列宽
+export const column = {
+  sort: 70 + cellPadding, // 序号、排名、ID
+  date: 140 + cellPadding, // 日期-年月日时分秒
+  name: 120 + cellPadding, // 昵称
+  url: 180 + cellPadding, // 链接地址
+  status: 100 + cellPadding, // 状态
 }
 
 export default {
