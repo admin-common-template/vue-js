@@ -33,14 +33,16 @@ function handleScroll() {
   timer = setTimeout(() => {
     const index = tagNavList.value.indexOf(route.name)
     const dom = scrollbarRef.value
-    const active = tagRef.value[index].$el
-    // 计算滚动距离左侧的距离
-    if (active.offsetLeft + active.offsetWidth > tagBodyLeft.value + dom.offsetWidth) {
-      // 靠右侧
-      tagBodyLeft.value = active.offsetLeft + active.offsetWidth - dom.offsetWidth
-    } else if (active.offsetLeft < tagBodyLeft.value) {
-      // 靠左侧
-      tagBodyLeft.value = active.offsetLeft
+    const active = tagRef.value[index]?.$el
+    if (active) {
+      // 计算滚动距离左侧的距离
+      if (active.offsetLeft + active.offsetWidth > tagBodyLeft.value + dom.offsetWidth) {
+        // 靠右侧
+        tagBodyLeft.value = active.offsetLeft + active.offsetWidth - dom.offsetWidth
+      } else if (active.offsetLeft < tagBodyLeft.value) {
+        // 靠左侧
+        tagBodyLeft.value = active.offsetLeft
+      }
     }
     clearTimeout(timer)
   }, 100)
