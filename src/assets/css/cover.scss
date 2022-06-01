@@ -1,14 +1,58 @@
-/* ======================= 菜单相关 ======================= */
-.el-menu {
-  // 导航菜单设置文本与图表的距离
-  &:not(.el-menu--collapse) .el-sub-menu__title span {
-    margin-left: 10px;
+#app {
+
+  /* ======================= 菜单相关 ======================= */
+  .el-menu {
+    // 导航菜单设置文本与图表的距离
+    &:not(.el-menu--collapse) .el-sub-menu__title span {
+      margin-left: 10px;
+    }
+    // 激活菜单背景
+    .el-menu-item.is-active {
+      background-color: #2d8cf0;
+    }
+    .el-sub-menu .el-menu-item {
+        min-width: auto;
+      }
+    }
+    
+  /* ======================= 表格相关 ======================= */
+  
+  // 表格样式
+  .el-table {
+    .el-table__cell {
+      padding: 6px 0;
+      .cell {
+        line-height: 27px;
+        padding: 0 4px;
+      }
+    }
   }
-  // 激活菜单背景
-  .el-menu-item.is-active {
-    background-color: #2d8cf0;
+  // 分页样式
+  .el-pagination {
+    padding-top: 8px;
+    .el-pagination__total, .el-pagination__sizes {
+      margin-right: 8px;
+    }
+    li {
+      margin: 0 2px;
+    }
+    .el-select {
+      .el-input {
+        width: 100px;
+      }
+    }
   }
-  .el-sub-menu .el-menu-item {
-      min-width: auto;
+  
+  /* ======================= 其余 ======================= */
+  
+  // card
+  .el-card {
+    --el-card-padding: 8px;
+    margin-top: 0;
+  }
+  
+  // button
+  .el-button+.el-button {
+    margin-left: 5px;
   }
 }

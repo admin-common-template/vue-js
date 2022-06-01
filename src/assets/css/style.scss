@@ -8,3 +8,20 @@
         display: none;
     }
 }
+
+// 页面操作区域
+.operate-box {
+    padding-bottom: 8px;
+}
+
+// #app
+.el-table {
+    .test-table-style {
+        &, &.hover-row, & > .el-table__cell {
+            background-color: yellowgreen !important;
+            .cell, .cell * {
+                color: #FFFFFF !important;
+            }
+        }
+    }
+}
