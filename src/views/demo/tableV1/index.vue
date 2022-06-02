@@ -16,7 +16,6 @@ const operate = reactive({
 })
 // 状态显示相关
 const commons = reactive({
-  isResize: false,
   type: '',
   title: '',
   loading: false,
@@ -32,7 +31,6 @@ const commons = reactive({
 // 获取搜索部分dom高度
 function getDomHeight() {
   commons.maxHeight = domHeight.pageHeight - domHeight.cardPadding - operateBox.value.offsetHeight
-  commons.isResize = false
 }
 
 function doSearch() {
