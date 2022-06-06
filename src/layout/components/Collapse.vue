@@ -11,5 +11,5 @@ function changeCollapse() {
 </script>
 
 <template>
-    <Iconify class="cursor-pointer" :icon="isCollapse ? 'ep:expand' : 'ep:fold'" @click="changeCollapse" />
+  <Iconify class="cursor-pointer" :icon="isCollapse ? 'ep:expand' : 'ep:fold'" @click="changeCollapse" />
 </template>

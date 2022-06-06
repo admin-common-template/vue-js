@@ -24,5 +24,5 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="w-full h-full" v-loading="true"></div>
+  <div class="w-full h-full" v-loading="true"></div>
 </template>

@@ -84,21 +84,21 @@ function handleStatus(type) {
 </script>
 
 <template>
-    <el-card class="mt-3">
-        <div ref="operateBox" class="operate-box">
-          <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
-        </div>
-        <TableV1 :data="operate.tableData" :columns="colTable1(status)" :max-height="commons.maxHeight" :loading="commons.loading" :pages="commons.pages" @selection-change="changeSelect" @changePage="changePage">
-          <template #address="scope">
-              <div style="color: red">{{ scope.row.address }}</div>
-          </template>
-          <template #default="scope">
-              <template v-if="scope.row.group_id !== 0">
-                <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
-                <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
-              </template>
-              <span v-else>--</span>
-          </template>
-        </TableV1>
-    </el-card>
+  <el-card class="mt-3">
+    <div ref="operateBox" class="operate-box">
+      <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
+    </div>
+    <TableV1 :data="operate.tableData" :columns="colTable1(status)" :max-height="commons.maxHeight" :loading="commons.loading" :pages="commons.pages" @selection-change="changeSelect" @changePage="changePage">
+      <template #address="scope">
+        <div style="color: red">{{ scope.row.address }}</div>
+      </template>
+      <template #default="scope">
+        <template v-if="scope.row.group_id !== 0">
+          <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
+          <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
+        </template>
+        <span v-else>--</span>
+      </template>
+    </TableV1>
+  </el-card>
 </template>

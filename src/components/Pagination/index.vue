@@ -22,13 +22,13 @@ function changePage(type, value) {
 
 <template>
   <el-pagination
-      v-if="page.count"
-      background
-      :page-sizes="pageSizeOpts"
-      :page-size="page.limit"
-      :current-page="page.page"
-      :total="page.count"
-      layout="total, sizes, prev, pager, next, jumper"
-      @size-change="(e) => changePage('limit', e)"
-      @current-change="(e) => changePage('page', e)"></el-pagination>
+    v-if="page.count"
+    background
+    :page-sizes="pageSizeOpts"
+    :page-size="page.limit"
+    :current-page="page.page"
+    :total="page.count"
+    layout="total, sizes, prev, pager, next, jumper"
+    @size-change="(e) => changePage('limit', e)"
+    @current-change="(e) => changePage('page', e)"></el-pagination>
 </template>

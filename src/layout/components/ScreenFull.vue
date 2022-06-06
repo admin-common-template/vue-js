@@ -15,5 +15,5 @@ function toggleScreen() {
 </script>
 
 <template>
-    <Iconify class="cursor-pointer" :icon="isFullScreen ? 'gridicons:fullscreen-exit' : 'gridicons:fullscreen'" @click="toggleScreen" />
+  <Iconify class="cursor-pointer" :icon="isFullScreen ? 'gridicons:fullscreen-exit' : 'gridicons:fullscreen'" @click="toggleScreen" />
 </template>

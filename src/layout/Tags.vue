@@ -107,28 +107,28 @@ function command(e) {
 </script>
 
 <template>
-    <div class="flex items-center h-[40px] box-border select-none shadow-[0_0_3px_2px_rgba(100,100,100,0.1)_inset] bg-[#F0F0F0]">
-        <div class="flex items-center h-[38px] mr-1 px-2 bg-white">
-            <Iconify class="cursor-pointer" icon="akar-icons:chevron-left" @click="scrollTo('left')" />
-        </div>
-        <div ref="scrollbarRef" class="relative flex-1 h-[38px] overflow-hidden">
-            <div class="absolute top-0 flex items-center flex-1 h-[38px] transition-all ease-in-out" ref="tagBoxRef" :style="{left: -tagBodyLeft + 'px'}">
-                <el-tag :ref="el => tagRef[i] = el" v-for="(tag, i) in tagNavList" class="mx-[4px] cursor-pointer" :class="{'bg-white text-gray-600': route.name !== tag}" :closable="tagNavList.length > 1" :effect="route.name === tag ? 'dark' : 'plain'" :type="route.name === tag ? '' : 'info'" @click="router.push({name: tag})" @close="removeTag(tag, i)" :key="tag">{{ routesName[tag] }}</el-tag>
-            </div>
-        </div>
-        <div class="flex items-center h-[38px] ml-1 px-2 bg-white">
-            <Iconify class="cursor-pointer" icon="akar-icons:chevron-right" @click="scrollTo('right')" />
-        </div>
-        <el-dropdown trigger="click" placement="bottom-end" @command="command">
-            <div class="flex items-center h-[38px] ml-px px-2 bg-white">
-                <Iconify class="cursor-pointer" icon="carbon:close-outline" />
-            </div>
-            <template #dropdown>
-            <el-dropdown-menu>
-                <el-dropdown-item command="other">关闭其它</el-dropdown-item>
-                <el-dropdown-item command="all">关闭所有</el-dropdown-item>
-            </el-dropdown-menu>
-            </template>
-        </el-dropdown>
+  <div class="flex items-center h-[40px] box-border select-none shadow-[0_0_3px_2px_rgba(100,100,100,0.1)_inset] bg-[#F0F0F0]">
+    <div class="flex items-center h-[38px] mr-1 px-2 bg-white">
+      <Iconify class="cursor-pointer" icon="akar-icons:chevron-left" @click="scrollTo('left')" />
     </div>
+    <div ref="scrollbarRef" class="relative flex-1 h-[38px] overflow-hidden">
+      <div class="absolute top-0 flex items-center flex-1 h-[38px] transition-all ease-in-out" ref="tagBoxRef" :style="{left: -tagBodyLeft + 'px'}">
+        <el-tag :ref="el => tagRef[i] = el" v-for="(tag, i) in tagNavList" class="mx-[4px] cursor-pointer" :class="{'bg-white text-gray-600': route.name !== tag}" :closable="tagNavList.length > 1" :effect="route.name === tag ? 'dark' : 'plain'" :type="route.name === tag ? '' : 'info'" @click="router.push({name: tag})" @close="removeTag(tag, i)" :key="tag">{{ routesName[tag] }}</el-tag>
+      </div>
+    </div>
+    <div class="flex items-center h-[38px] ml-1 px-2 bg-white">
+      <Iconify class="cursor-pointer" icon="akar-icons:chevron-right" @click="scrollTo('right')" />
+    </div>
+    <el-dropdown trigger="click" placement="bottom-end" @command="command">
+      <div class="flex items-center h-[38px] ml-px px-2 bg-white">
+        <Iconify class="cursor-pointer" icon="carbon:close-outline" />
+      </div>
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item command="other">关闭其它</el-dropdown-item>
+          <el-dropdown-item command="all">关闭所有</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
+  </div>
 </template>

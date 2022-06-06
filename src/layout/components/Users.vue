@@ -28,9 +28,9 @@ function logout() {
       <Iconify class="text-[12px] ml-1" icon="ant-design:caret-down-filled" />
     </div>
     <template #dropdown>
-        <el-dropdown-menu>
+      <el-dropdown-menu>
         <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
-        </el-dropdown-menu>
+      </el-dropdown-menu>
     </template>
   </el-dropdown>
 </template>
