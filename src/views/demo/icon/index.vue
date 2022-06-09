@@ -5,7 +5,7 @@ const boxRef = ref(null)
 const height = ref(0)
 
 onMounted(() => {
-  height.value = domHeight.pageHeight - domHeight.cardPadding - boxRef.value.offsetHeight
+  height.value = domHeight.pageHeight - boxRef.value.offsetHeight
 })
 </script>
 

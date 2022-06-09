@@ -25,7 +25,7 @@ const tableOption = reactive({
 
 // 获取搜索部分dom高度
 function getDomHeight() {
-  tableOption.maxHeight = domHeight.pageHeight - domHeight.cardPadding - operateBoxRef.value.offsetHeight
+  tableOption.maxHeight = domHeight.pageHeight - operateBoxRef.value.offsetHeight
 }
 
 function doSearch() {
@@ -78,18 +78,16 @@ function handleStatus(type) {
 </script>
 
 <template>
-  <el-card class="mt-3">
-    <div ref="operateBoxRef" class="operate-box">
-      <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
-    </div>
-    <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
-      <template #address="scope">
-        <div style="color: red">{{ scope.row.address }}</div>
-      </template>
-      <template #default="scope">
-        <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
-        <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
-      </template>
-    </TableV1>
-  </el-card>
+  <div ref="operateBoxRef" class="operate-box">
+    <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
+  </div>
+  <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
+    <template #address="scope">
+      <div style="color: red">{{ scope.row.address }}</div>
+    </template>
+    <template #default="scope">
+      <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
+      <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
+    </template>
+  </TableV1>
 </template>
