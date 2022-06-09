@@ -8,48 +8,43 @@ const status = {
   1: '正常',
 }
 
-const operateBox = ref(null)
-
-const operate = reactive({
-  promotionChannel: [],
-  tableData: [],
-})
-// 状态显示相关
-const commons = reactive({
-  type: '',
-  title: '',
+const operateBoxRef = ref(null)
+// 表格相关属性事件
+const tableOption = reactive({
   loading: false,
-  modalLoading: false,
+  data: [],
+  columns: colTable1(status),
   maxHeight: 0,
   pages: {
     page: 1,
     limit: 20,
     count: 0,
   },
+  select: [],
 })
 
 // 获取搜索部分dom高度
 function getDomHeight() {
-  commons.maxHeight = domHeight.pageHeight - domHeight.cardPadding - operateBox.value.offsetHeight
+  tableOption.maxHeight = domHeight.pageHeight - domHeight.cardPadding - operateBoxRef.value.offsetHeight
 }
 
 function doSearch() {
-  commons.loading = true
+  tableOption.loading = true
   const sendData = {
-    page: commons.pages.page,
-    limit: commons.pages.limit,
+    page: tableOption.pages.page,
+    limit: tableOption.pages.limit,
   }
   getV1(sendData).then((res) => {
-    commons.loading = false
+    tableOption.loading = false
     const { code, data, count } = res
     if (code === 0) {
-      commons.pages.count = count
+      tableOption.pages.count = count
       data.map((item, i) => {
         if ([5, 8, 11].includes(i)) {
           item.rowClassName = 'test-table-style'
         }
       })
-      operate.tableData = data
+      tableOption.data = data
     }
   })
 }
@@ -64,12 +59,12 @@ onMounted(() => {
 
 // 选中行发生变化
 function changeSelect(rows) {
-  operate.select = rows.map((item) => item.id).join(',')
+  tableOption.select = rows.map((item) => item.id)
 }
 
 // 分页参数改变
 function changePage(newPage) {
-  commons.pages = newPage
+  tableOption.pages = newPage
   doSearch()
 }
 
@@ -78,26 +73,22 @@ function handleOperate(type, data) {
 }
 
 function handleStatus(type) {
-  const sendData = operate.select
-  console.log(type, sendData)
+  console.log(type)
 }
 </script>
 
 <template>
   <el-card class="mt-3">
-    <div ref="operateBox" class="operate-box">
+    <div ref="operateBoxRef" class="operate-box">
       <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
     </div>
-    <TableV1 :data="operate.tableData" :columns="colTable1(status)" :max-height="commons.maxHeight" :loading="commons.loading" :pages="commons.pages" @selection-change="changeSelect" @changePage="changePage">
+    <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
       <template #address="scope">
         <div style="color: red">{{ scope.row.address }}</div>
       </template>
       <template #default="scope">
-        <template v-if="scope.row.group_id !== 0">
-          <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
-          <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
-        </template>
-        <span v-else>--</span>
+        <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
+        <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
       </template>
     </TableV1>
   </el-card>
