@@ -39,7 +39,7 @@ export const regs = {
  * @description 公共dom高度
  */
 export const domHeight = {
-  pageHeight: window.innerHeight - 90 - 20 - 2, // 页面可视高度：可用窗口高度 - 顶部区域90 - 内容padding20 - 边框2
+  pageHeight: window.innerHeight - 90 - 12 - 2 - 16, // 页面可视高度：可用窗口高度 - 顶部区域90 - 内容padding12 - 边框2 - cardpadding16
   pagination: 42, // 分页区域高度
   cardPadding: 16, // 卡片内边距高度
 }
