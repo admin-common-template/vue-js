@@ -15,3 +15,11 @@ export const ruleLogin = {
     { validator: validateCommon(regs.password), trigger: 'blur' },
   ],
 }
+
+// 弹框示例
+export const ruleDialog = {
+  name: [
+    { required: true, pattern, message: '请输入账号', trigger: 'blur' },
+    { validator: validateCommon(regs.username), trigger: 'blur' },
+  ],
+}

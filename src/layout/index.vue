@@ -30,7 +30,7 @@ onBeforeMount(() => {
 
 <template>
   <el-container>
-    <el-aside :width="isCollapse ? layout.collapseOn: layout.collapseOff">
+    <el-aside :width="isCollapse ? layout.collapseOn : layout.collapseOff">
       <Aside />
     </el-aside>
     <el-container>
@@ -41,7 +41,9 @@ onBeforeMount(() => {
       <el-main>
         <router-view v-slot="{ Component }">
           <keep-alive :include="cacheList">
-            <component v-if="isRouterAlive" :is="Component" />
+            <el-card class="h-full">
+              <component v-if="isRouterAlive" :is="Component" />
+            </el-card>
           </keep-alive>
         </router-view>
       </el-main>
@@ -53,13 +55,14 @@ onBeforeMount(() => {
 .el-aside {
   @include hideScroll(y);
 }
+
 .el-header {
   @apply box-border px-0 bg-white;
   height: v-bind("layout.headerHeight");
 }
 
 .el-main {
-  @apply p-2.5;
+  @apply p-1.5;
   background-color: v-bind("layout.bg");
 }
 </style>

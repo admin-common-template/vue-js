@@ -1,19 +1,16 @@
-<script setup name="tableV1">
-import { colTable1 } from '@column/components'
-import { getV1 } from '@api/index'
+<script setup name="dialog">
+import { colDialog } from '@column/components'
+import { getDialog } from '@api/index'
 import { domHeight } from '@/common/config'
-
-const status = {
-  0: '封禁',
-  1: '正常',
-}
+import Dialog from './Dialog.vue'
 
 const operateBoxRef = ref(null)
+const dialogRef = ref(null)
 // 表格相关属性事件
 const tableOption = reactive({
   loading: false,
   data: [],
-  columns: colTable1(status),
+  columns: colDialog,
   maxHeight: 0,
   pages: {
     page: 1,
@@ -34,16 +31,11 @@ function doSearch() {
     page: tableOption.pages.page,
     limit: tableOption.pages.limit,
   }
-  getV1(sendData).then((res) => {
+  getDialog(sendData).then((res) => {
     tableOption.loading = false
     const { code, data, count } = res
     if (code === 0) {
       tableOption.pages.count = count
-      data.map((item, i) => {
-        if ([5, 8, 11].includes(i)) {
-          item.rowClassName = 'test-table-style'
-        }
-      })
       tableOption.data = data
     }
   })
@@ -68,26 +60,41 @@ function changePage(newPage) {
   doSearch()
 }
 
-function handleOperate(type, data) {
-  console.log('-handleOperate-', type, data)
+function handleOperate(type, data = {}) {
+  const sendObj = {
+    type,
+  }
+  if (['edit', 'del', 'black'].includes(type)) {
+    sendObj.oldData = data
+  }
+  dialogRef.value.openDialog(sendObj)
 }
 
 function handleStatus(type) {
-  console.log(type)
+  const sendData = tableOption.select
+  if (!sendData.length) {
+    return ElMessage.warning('请选择禁用用户')
+  }
+  handleOperate(type, sendData)
 }
+
+function reSearch() {
+  tableOption.pages.page = 1
+  tableOption.pages.limit = 20
+  doSearch()
+}
+
 </script>
 
 <template>
   <div ref="operateBoxRef" class="operate-box">
-    <el-button type="danger" @click="handleStatus('lock')">封禁</el-button>
+    <el-button type="danger" @click="handleStatus('black')">禁用</el-button>
   </div>
   <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
-    <template #address="scope">
-      <div style="color: red">{{ scope.row.address }}</div>
-    </template>
     <template #default="scope">
-      <el-button type="primary" size="small" @click="handleOperate('edit', scope)">编辑</el-button>
-      <el-button type="danger" size="small" @click="handleOperate('del', scope)">删除</el-button>
+      <el-button type="primary" size="small" @click="handleOperate('edit', scope.row)">编辑</el-button>
+      <el-button type="danger" size="small" @click="handleOperate('del', scope.row)">删除</el-button>
     </template>
   </TableV1>
+  <Dialog ref="dialogRef" @reSearch="reSearch" />
 </template>

@@ -10,3 +10,12 @@ export const colTable1 = (status = {}) => [
   { property: 'status', label: '状态', align: 'center', minWidth: column.status, formatter: (row) => status[row.status] },
   { slots: 'default', label: '操作', align: 'center', fixed: 'right', width: 120 },
 ]
+
+// 对话框示例
+export const colDialog = [
+  { type: 'selection', align: 'center', width: column.check, fixed: 'left' },
+  { property: 'id', label: 'ID', align: 'center', minWidth: column.sort },
+  { property: 'name', label: '姓名', align: 'center', minWidth: column.name },
+  { property: 'date', label: '生日', align: 'center', minWidth: column.date },
+  { slots: 'default', label: '操作', align: 'center', fixed: 'right', width: 120 },
+]

@@ -42,6 +42,31 @@
       }
     }
   }
+
+  /* ======================= 弹框相关 ======================= */
+.custom-modal {
+  @apply rounded-md overflow-hidden;
+  .el-dialog__header {
+    @apply flex items-center h-[50px] mr-0;
+    padding: 0 20px !important;
+    background-color: #03152a;
+    .el-dialog__title {
+      @apply text-white text-sm;
+    }
+    .el-dialog__close {
+      @apply text-white text-lg -mt-1;
+    }
+  }
+  .el-dialog__body {
+    @apply min-h-[100px] p-[10px_20px] overflow-y-auto box-border;
+    max-height: calc(70vh - 120px);
+  }
+  .el-dialog__footer {
+    @apply h-[50px] box-border;
+    padding: 10px 20px !important;
+    border-top: 1px solid #e8eaec;
+  }
+}
   
   /* ======================= 其余 ======================= */
   

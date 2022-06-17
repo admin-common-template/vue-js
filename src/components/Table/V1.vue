@@ -39,6 +39,9 @@ const tableMaxHeight = computed(() => {
       </el-table-column>
       <el-table-column v-else v-bind="col" :key="i+'default'"></el-table-column>
     </template>
+    <template #empty>
+      <span>{{props.loading ? '加载中' : '暂无数据'}}</span>
+    </template>
   </el-table>
   <Pagination v-if="props.pagination" :page="props.pages" @changePage="(newPage) => emit('changePage', newPage)" />
 </template>
