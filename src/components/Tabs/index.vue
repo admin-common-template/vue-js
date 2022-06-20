@@ -46,7 +46,7 @@ function tabChange(name) {
 
 <template>
   <el-tabs class="h-full" type="border-card" :model-value="tabInfo.activeName" @tab-change="tabChange">
-    <el-tab-pane v-for="(item, i) in props.tabs" :key="i" :label="item.label" :name="item.name">
+    <el-tab-pane v-for="(item, i) in props.tabs" :key="i" :label="item.label" :name="item.name" lazy>
       <component :is="item.page" v-if="tabInfo.activeList.includes(item.name)" v-bind="props.tabPane"></component>
     </el-tab-pane>
   </el-tabs>
@@ -56,8 +56,8 @@ function tabChange(name) {
     .h-full {
         // tabPane内容设置最大高度，内容溢出滚动显示
         ::v-deep .el-tabs__content {
-            height: calc(100% - 40px);
-            overflow: auto;
+          height: calc(100% - 40px);
+          overflow: auto;
         }
     }
 </style>
