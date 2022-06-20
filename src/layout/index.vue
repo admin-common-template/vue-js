@@ -41,9 +41,7 @@ onBeforeMount(() => {
       <el-main>
         <router-view v-slot="{ Component }">
           <keep-alive :include="cacheList">
-            <el-card class="h-full">
-              <component v-if="isRouterAlive" :is="Component" />
-            </el-card>
+            <component v-if="isRouterAlive" :is="Component" />
           </keep-alive>
         </router-view>
       </el-main>
