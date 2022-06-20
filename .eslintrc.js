@@ -40,6 +40,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'], // 换行符规则
     indent: ['error', 2], // 缩进4个空格
     'max-len': 'off', // 行的最大长度
+    'no-bitwise': 'off',
     'no-eval': 'off',
     'no-irregular-whitespace': 'off', // 禁止不规则的空白
     'no-multiple-empty-lines': ['error', { max: 1 }], // 不允许多个空行
