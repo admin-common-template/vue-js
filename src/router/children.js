@@ -19,6 +19,11 @@ const childList = [
     name: 'dialog',
     component: () => import('@/views/demo/dialog/index.vue'),
   },
+  { // 标签页
+    path: '/tabs',
+    name: 'tabs',
+    component: () => import('@/views/demo/tabs/index.vue'),
+  },
 ]
 
 // 导出所有子菜单name和path
