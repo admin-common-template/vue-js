@@ -45,7 +45,7 @@ function tabChange(name) {
 </script>
 
 <template>
-  <el-tabs class="h-full" type="border-card" :model-value="tabInfo.activeName" @tab-change="tabChange">
+  <el-tabs class="h-full rounded shadow" type="border-card" :model-value="tabInfo.activeName" @tab-change="tabChange">
     <el-tab-pane v-for="(item, i) in props.tabs" :key="i" :label="item.label" :name="item.name" lazy>
       <component :is="item.page" v-if="tabInfo.activeList.includes(item.name)" v-bind="props.tabPane"></component>
     </el-tab-pane>
