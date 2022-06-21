@@ -24,6 +24,11 @@ const childList = [
     name: 'tabs',
     component: () => import('@/views/demo/tabs/index.vue'),
   },
+  { // 图表
+    path: '/echarts',
+    name: 'echarts',
+    component: () => import('@/views/demo/echarts/index.vue'),
+  },
 ]
 
 // 导出所有子菜单name和path
