@@ -12,7 +12,7 @@ const childList = [
   { // 表格V1
     path: '/tableV1',
     name: 'tableV1',
-    component: () => import('@/views/demo/tableV1/index.vue'),
+    component: () => import('@/views/table/tableV1/index.vue'),
   },
   { // 对话框
     path: '/dialog',
@@ -24,10 +24,21 @@ const childList = [
     name: 'tabs',
     component: () => import('@/views/demo/tabs/index.vue'),
   },
-  { // 图表
-    path: '/echarts',
-    name: 'echarts',
-    component: () => import('@/views/demo/echarts/index.vue'),
+  /* ================== 图表 ================== */
+  { // 折线图
+    path: '/chartLine',
+    name: 'chartLine',
+    component: () => import('@/views/charts/line/index.vue'),
+  },
+  { // 折线图
+    path: '/chartBar',
+    name: 'chartBar',
+    component: () => import('@/views/charts/bar/index.vue'),
+  },
+  { // 饼图
+    path: '/chartPie',
+    name: 'chartPie',
+    component: () => import('@/views/charts/pie/index.vue'),
   },
 ]
 

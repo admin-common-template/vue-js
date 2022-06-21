@@ -1,5 +1,5 @@
 <script setup>
-import Bar from '@/components/Echarts/Bar.vue'
+import Line from '@/components/Echarts/Line.vue'
 
 const detail = reactive({
   xTitle: '日期',
@@ -24,8 +24,8 @@ function resetData() {
 </script>
 
 <template>
-  <div>
+  <el-card class="h-full">
     <el-button class="mb-8" @click="resetData">重置数据</el-button>
-    <Bar :detail="detail" />
-  </div>
+    <Line :detail="detail" />
+  </el-card>
 </template>

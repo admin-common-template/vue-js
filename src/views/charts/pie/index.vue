@@ -21,8 +21,8 @@ function resetData() {
 </script>
 
 <template>
-  <div class="w-full h-full">
+  <el-card class="h-full">
     <el-button class="mb-8" @click="resetData">重置数据</el-button>
     <Pie :detail="detail" />
-  </div>
+  </el-card>
 </template>
