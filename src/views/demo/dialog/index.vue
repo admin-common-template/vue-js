@@ -1,4 +1,4 @@
-<script setup name="dialog">
+<script setup name="dialogs">
 import { colDialog } from '@column/components'
 import { getDialog } from '@api/index'
 import { domHeight } from '@/common/config'
@@ -87,14 +87,16 @@ function reSearch() {
 </script>
 
 <template>
-  <div ref="operateBoxRef" class="operate-box">
-    <el-button type="danger" @click="handleStatus('black')">禁用</el-button>
-  </div>
-  <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
-    <template #default="scope">
-      <el-button type="primary" size="small" @click="handleOperate('edit', scope.row)">编辑</el-button>
-      <el-button type="danger" size="small" @click="handleOperate('del', scope.row)">删除</el-button>
-    </template>
-  </TableV1>
-  <Dialog ref="dialogRef" @reSearch="reSearch" />
+  <el-card class="h-full">
+    <div ref="operateBoxRef" class="operate-box">
+      <el-button type="danger" @click="handleStatus('black')">禁用</el-button>
+    </div>
+    <TableV1 v-bind="tableOption" @selection-change="changeSelect" @changePage="changePage">
+      <template #default="scope">
+        <el-button type="primary" size="small" @click="handleOperate('edit', scope.row)">编辑</el-button>
+        <el-button type="danger" size="small" @click="handleOperate('del', scope.row)">删除</el-button>
+      </template>
+    </TableV1>
+    <Dialog ref="dialogRef" @reSearch="reSearch" />
+  </el-card>
 </template>

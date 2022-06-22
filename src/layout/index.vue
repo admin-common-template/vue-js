@@ -2,6 +2,7 @@
 import { useUserStore } from '@store/user'
 import { layout } from '@/common/config'
 import { useAppStore } from '@store/app'
+import { cacheList } from '@/router/children'
 import Aside from './Aside.vue'
 import Header from './Header.vue'
 import Tags from './Tags.vue'
@@ -10,7 +11,6 @@ const appStore = useAppStore()
 const userStore = useUserStore()
 
 const isRouterAlive = ref(true)
-const cacheList = ref([])
 
 // 局部组件刷新
 const reload = () => {
@@ -39,12 +39,12 @@ onBeforeMount(() => {
         <Tags />
       </el-header>
       <el-main>
-        <router-view v-slot="{ Component }">
-          <keep-alive :include="cacheList">
-            <el-card class="h-full">
-              <component v-if="isRouterAlive" :is="Component" />
-            </el-card>
-          </keep-alive>
+        <router-view v-slot="{ Component, route }">
+          <transition appear name="fade-transform" mode="out-in">
+            <keep-alive :include="cacheList">
+              <component :is="Component" :key="route.name"></component>
+            </keep-alive>
+          </transition>
         </router-view>
       </el-main>
     </el-container>

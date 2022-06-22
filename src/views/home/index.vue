@@ -3,5 +3,7 @@
 </script>
 
 <template>
-  <div>home</div>
+  <el-card class="h-full">
+    <div>home</div>
+  </el-card>
 </template>

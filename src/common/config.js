@@ -10,6 +10,9 @@ export const layout = {
 export const menuIcons = {
   dashboard: 'bx:bxs-home', // 组件
   demo: 'heroicons-outline:academic-cap', // 功能
+  table: 'bi:table', // 表格
+  charts: 'logos:highcharts', // 图表
+  editor: 'gala:editor', // 富文本
 }
 
 /*
