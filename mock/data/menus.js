@@ -15,4 +15,7 @@ export default [
   { _id: '60f6', rule_id: 1010, parent_id: 680, type: 1, title: '折线图', status: 1, sort: 1, only: 'chartLine' },
   { _id: '60f6', rule_id: 1011, parent_id: 680, type: 1, title: '柱状图', status: 1, sort: 1, only: 'chartBar' },
   { _id: '60f6', rule_id: 1012, parent_id: 680, type: 1, title: '饼图', status: 1, sort: 1, only: 'chartPie' },
+  // ...
+  { _id: '60f6', rule_id: 690, parent_id: 0, type: 0, title: '富文本', status: 1, sort: 1, only: 'editor' },
+  { _id: '60f6', rule_id: 1013, parent_id: 690, type: 1, title: 'wangEditor', status: 1, sort: 1, only: 'wangEditor' },
 ]

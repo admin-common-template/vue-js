@@ -46,6 +46,12 @@ const childList = [
     name: 'chartPie',
     component: () => import('@/views/charts/pie/index.vue'),
   },
+  /* ================== 富文本 ================== */
+  { // wangEditor
+    path: '/wangEditor',
+    name: 'wangEditor',
+    component: () => import('@/views/editor/wangEditor/index.vue'),
+  },
 ]
 
 // 导出所有子菜单name和path
