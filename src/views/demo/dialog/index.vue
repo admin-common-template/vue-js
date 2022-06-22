@@ -1,4 +1,4 @@
-<script setup name="dialog">
+<script setup name="dialogs">
 import { colDialog } from '@column/components'
 import { getDialog } from '@api/index'
 import { domHeight } from '@/common/config'

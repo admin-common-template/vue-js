@@ -8,6 +8,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe } from 'vite-plugin-mock'
 import WindiCSS from 'vite-plugin-windicss'
 import viteCompression from 'vite-plugin-compression'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 export default defineConfig({
   server: {
@@ -19,6 +20,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    vueSetupExtend(),
     viteMockServe({
       supportTs: false,
     }),

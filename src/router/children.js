@@ -8,6 +8,9 @@ const childList = [
     path: '/icon',
     name: 'icon',
     component: () => import('@/views/demo/icon/index.vue'),
+    meta: {
+      keepAlive: true,
+    },
   },
   { // 表格V1
     path: '/tableV1',
@@ -15,9 +18,12 @@ const childList = [
     component: () => import('@/views/table/tableV1/index.vue'),
   },
   { // 对话框
-    path: '/dialog',
-    name: 'dialog',
+    path: '/dialogs',
+    name: 'dialogs',
     component: () => import('@/views/demo/dialog/index.vue'),
+    meta: {
+      keepAlive: true,
+    },
   },
   { // 标签页
     path: '/tabs',
@@ -44,5 +50,8 @@ const childList = [
 
 // 导出所有子菜单name和path
 export const childInfo = Object.fromEntries(childList.map((item) => [item.name, item.path]))
+
+// 导出所有子菜单keepAlive
+export const cacheList = childList.filter((item) => item?.meta?.keepAlive).map((item) => item.name)
 
 export default childList
