@@ -9,6 +9,8 @@
     "lint": "eslint --ext .ts,vue --ignore-path .gitignore src/ --fix"
   },
   "dependencies": {
+    "@wangeditor/editor": "^5.1.1",
+    "@wangeditor/editor-for-vue": "^5.1.11",
     "axios": "^0.27.2",
     "dayjs": "^1.11.3",
     "echarts": "^5.3.3",
