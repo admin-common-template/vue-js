@@ -18,4 +18,7 @@ export default [
   // ...
   { _id: '60f6', rule_id: 690, parent_id: 0, type: 0, title: '富文本', status: 1, sort: 1, only: 'editor' },
   { _id: '60f6', rule_id: 1013, parent_id: 690, type: 1, title: 'wangEditor', status: 1, sort: 1, only: 'wangEditor' },
+  // ...
+  { _id: '60f6', rule_id: 700, parent_id: 0, type: 0, title: '日期时间选择', status: 1, sort: 1, only: 'date' },
+  { _id: '60f6', rule_id: 1014, parent_id: 700, type: 1, title: '日期选择', status: 1, sort: 1, only: 'datePicker' },
 ]

@@ -52,6 +52,12 @@ const childList = [
     name: 'wangEditor',
     component: () => import('@/views/editor/wangEditor/index.vue'),
   },
+  /* ================== 日期时间选择 ================== */
+  { // 日期选择
+    path: '/datePicker',
+    name: 'datePicker',
+    component: () => import('@/views/date/datePicker/index.vue'),
+  },
 ]
 
 // 导出所有子菜单name和path
